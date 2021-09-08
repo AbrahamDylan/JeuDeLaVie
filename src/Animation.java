@@ -21,7 +21,7 @@ public class Animation {
             System.out.print(jeu);
             System.out.print("t = " + i);
             jeu.succ();
-            Thread.sleep(2000);
+            Thread.sleep(500);
         }
     }
 }

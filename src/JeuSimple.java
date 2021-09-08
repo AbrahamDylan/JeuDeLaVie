@@ -17,8 +17,8 @@ public class JeuSimple {/*
 
         boolean[][] tabDoublon = new boolean[this.grille.length][this.grille[0].length];
         // System.out.println(tab);
-        for (int i = 1; i < this.grille.length; i++) {
-            for (int j = 1; j < this.grille[i].length; j++) {
+        for (int i = 0; i < this.grille.length; i++) {
+            for (int j = 0; j < this.grille[i].length; j++) {
                 tabDoublon[i][j] = chercheMort(i, j);
             }
         }
@@ -51,9 +51,9 @@ public class JeuSimple {/*
                     tab += ". ";
                 }
                 if (j == grille.length - 1) {
-                    tab += "\n";
+                    //tab += "\n";
                 }
-            }
+            }tab += "\n";
         }
         tab += "\n";
         return tab;
