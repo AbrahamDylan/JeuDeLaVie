@@ -2,8 +2,10 @@ public class JeuSimple {/*
     private boolean etat;
     private int posX;
     private int posY;*/
+    private boolean[][] grille;
 
-    public JeuSimple() {
+    public JeuSimple(boolean[][] tab) {
+        this.grille=tab;
     }
 
     ;
@@ -31,7 +33,7 @@ public class JeuSimple {/*
     }
 
     public String toString() {
-
+        for(int i =0; i<)
         return "";
     }
 }
