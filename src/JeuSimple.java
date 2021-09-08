@@ -8,48 +8,49 @@ public class JeuSimple {/*
     private boolean[][] grille;
 
     public JeuSimple(boolean[][] tab) {
-        this.grille=tab;
+        this.grille = tab;
     }
 
     ;
 
-    public void succ(boolean[][] tab) {
-        int mort = -1;
-       // System.out.println(tab);
-        for (int i = 2; i<=3 ; i++){//< this.grille.length; i++) {
-            for (int j = 0; j < this.grille[i].length; j++) {//System.out.print(this.grille.length+" ");
-                //System.out.println(tab[i].length);
-                mort = 8;
-                for (int horizontale = -1; horizontale <= 1; horizontale++) {
-                    for (int verticale = -1; verticale <= 1; verticale++) {
-                        if (((i + verticale) < 0 || i + verticale >= this.grille.length) || ((j + horizontale) < 0) || j + horizontale >= this.grille[i].length) {
-                        } else {
-                            if ( this.grille[(i + verticale)][(j + horizontale)]) {
-                                System.out.println((i + verticale)+" "+(j + horizontale));
-                                mort--;
-                            }
-                        }
+    public void succ() {
+
+        boolean[][] tabDoublon = new boolean[this.grille.length][this.grille[0].length];
+        // System.out.println(tab);
+        for (int i = 1; i < this.grille.length; i++) {
+            for (int j = 1; j < this.grille[i].length; j++) {
+                tabDoublon[i][j] = chercheMort(i, j);
+            }
+        }
+        this.grille = tabDoublon;
+    }
+
+    public boolean chercheMort(int i, int j) {
+        int mort = 8;
+        for (int horizontale = -1; horizontale <= 1; horizontale++) {
+            for (int verticale = -1; verticale <= 1; verticale++) {
+                if (((horizontale == 0 && verticale == 0) || (i + horizontale) < 0 || i + horizontale >= this.grille.length) || ((j + verticale) < 0) || j + verticale >= this.grille[i].length) {
+                } else {
+                    if (this.grille[(i + horizontale)][(j + verticale)]) {
+                        mort--;
                     }
                 }
-                this.grille[i][j] =(mort == 6 && this.grille[i][j]) || mort == 5;
-                System.out.print(mort+" ");
             }
-            System.out.println("Suivant");
         }
-        // return (mort == 6 && tab[this.posX][this.posX]) || mort == 5;
+        return (mort == 6 && this.grille[i][j]) || mort == 5;
     }
 
     public String toString() {
 
         String tab = "";
-        for(int i = 0; i<this.grille.length; i++){
-            for (int j = 0 ; j<this.grille[i].length; j++){
-                if (grille[i][j]){
+        for (int i = 0; i < this.grille.length; i++) {
+            for (int j = 0; j < this.grille[i].length; j++) {
+                if (grille[i][j]) {
                     tab += "* ";
-                } else{
+                } else {
                     tab += ". ";
                 }
-                if (j == grille.length-1){
+                if (j == grille.length - 1) {
                     tab += "\n";
                 }
             }
