@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class JeuSimple {/*
     private boolean etat;
     private int posX;
@@ -33,7 +35,21 @@ public class JeuSimple {/*
     }
 
     public String toString() {
-        for(int i =0; i<)
-        return "";
+
+        String tab = "";
+        for(int i = 0; i<this.grille.length; i++){
+            for (int j = 0 ; j<this.grille[i].length; j++){
+                if (grille[i][j]){
+                    tab += "* ";
+                } else{
+                    tab += ". ";
+                }
+                if (j == grille.length-1){
+                    tab += "\n";
+                }
+            }
+        }
+        tab += "\n";
+        return tab;
     }
 }
