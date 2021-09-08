@@ -1,9 +1,9 @@
 import java.awt.Event;
 
 public class Animation {
-    JeuSimple jeu;
+    Jeu jeu;
 
-    public Animation(JeuSimple jeu) {
+    public Animation(Jeu jeu) {
         this.jeu = jeu;
     }
 

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class JeuSimple {/*
+public class JeuSimple  implements Jeu{/*
     private boolean etat;
     private int posX;
     private int posY;*/

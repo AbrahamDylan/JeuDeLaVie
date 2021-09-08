@@ -34,7 +34,7 @@ public class Main {
             }
             System.out.println(' ');
         }*/
-        JeuSimple jeu = new JeuSimple(tab);
+        Jeu jeu = new JeuSimple(tab);
 
         Animation anim = new Animation(jeu);
         System.out.println(jeu);
