@@ -9,9 +9,11 @@ public class Animation {
     }
 
     public void run(int d) throws InterruptedException {
+
         /*tab[2][1]=true;
         tab[3][1]=true;
         tab[2][2]=true;*/
+
         System.out.print((char) Event.ESCAPE + "7");
         //jeu.reset();
 
