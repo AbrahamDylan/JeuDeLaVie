@@ -1,6 +1,8 @@
+import java.io.IOException;
+
 public class Main {
 
-    public static void main (String[] args) throws InterruptedException {
+    public static void main (String[] args) throws InterruptedException, IOException {
         boolean[][] tab = new boolean[7][8];
 
         /*tab[1][4]=true; double cligno
@@ -28,17 +30,16 @@ public class Main {
         tab[6][1]=true;
         tab[6][6]=true;
         tab[6][7]=true;
-       /* for(int i=0; i< tab.length;i++){
-            for( int j=0; j<tab[i].length;j++){
-                System.out.print(tab[i][j]);
-            }
-            System.out.println(' ');
-        }*/
-        Jeu jeu = new JeuSimple(tab);
 
-        Animation anim = new Animation(jeu);
+        Jeu jeu = new JeuSimple(tab);
+        Jeu jeu2 = new JeuDeLaVie("ADDER.lif");
+
+        /*Animation anim = new Animation(jeu);
         System.out.println(jeu);
-        anim.run(12);
+        anim.run(12);*/
+        Animation anim = new Animation(jeu2);
+        System.out.println(jeu2);
+        anim.run(2);
     }
 
 
