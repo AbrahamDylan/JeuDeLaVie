@@ -1,8 +1,6 @@
-import java.io.IOException;
-
 public class Main {
 
-    public static void main (String[] args) throws InterruptedException, IOException {
+    public static void main (String[] args) throws InterruptedException {
         boolean[][] tab = new boolean[7][8];
 
         /*tab[1][4]=true; double cligno
@@ -12,7 +10,7 @@ public class Main {
         tab[5][1]=true;
         tab[5][3]=true;*/
 
-        tab[1][3]=true; //fontaine 8 / 8
+        /*tab[1][3]=true; //fontaine 8 / 8
         tab[1][4]=true;
         tab[2][6]=true;
         tab[2][5]=true;
