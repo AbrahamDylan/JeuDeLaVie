@@ -6,7 +6,29 @@ import java.awt.Event;
 
 public class Programme2 {
     static public void main(String[] args){
-        final String message = args[0] + "         ";
+
+        boolean[][] tab = new boolean[7][8];
+
+        tab[1][3]=true; //fontaine 8 / 8
+        tab[1][4]=true;
+        tab[2][6]=true;
+        tab[2][5]=true;
+        tab[2][2]=true;
+        tab[2][1]=true;
+        tab[3][1]=true;
+        tab[3][6]=true;
+        tab[4][5]=true;
+        tab[4][2]=true;
+        tab[5][2]=true;
+        tab[5][5]=true;
+        tab[5][7]=true;
+        tab[5][0]=true;
+        tab[6][0]=true;
+        tab[6][1]=true;
+        tab[6][6]=true;
+        tab[6][7]=true;
+
+        Jeu jeu = new JeuSimple(tab);
 
         System.out.print((char)Event.ESCAPE + "7");
 
@@ -14,9 +36,14 @@ public class Programme2 {
             int i=0;
             public void actionPerformed(ActionEvent e) {
                 System.out.print((char) Event.ESCAPE + "8");
-                System.out.println(message.substring(i%message.length())
-                    + message.substring(0,i%message.length()));
-                System.out.println(" t =" + i);
+                System.out.print("");
+                System.out.println(jeu);
+                jeu.succ();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
                 i++;
             }
         });
